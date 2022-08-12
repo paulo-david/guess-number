@@ -1,0 +1,95 @@
+:root {
+  --orange-900: #ff6600;
+  --orange-800: #ef6c00;
+  --orange-700: #db6300;
+  --orange-600: #c0661c;
+
+  --green: #32bf00;
+  --red: #cc3300;
+
+  --black-900: #222222;
+  --black-800: #262a34;
+
+  --gray-900: #434854;
+  --gray-800: #9e9e9e;
+  --gray-700: #cfcfcf;
+  --gray-600: #dddddd;
+  --gray-500: #eeeeee;
+  --white: #ffffff;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+
+  background-image: linear-gradient(var(--gray-500), var(--white));
+}
+
+h1 {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-transform: uppercase;
+
+  text-align: center;
+
+  margin-top: 62px;
+  margin-bottom: 17px;
+
+  transition: 0.3s;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.25em;
+
+    margin-top: 44px;
+    margin-bottom: 21px;
+
+    transition: 0.3s;
+  }
+}
+
+.orange-gradient-textColor {
+  background-image: linear-gradient(var(--orange-800), var(--orange-700));
+
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.orange-textColor {
+  color: var(--orange-900)
+}
+
+.green-textColor {
+  color: var(--green)
+}
+
+.red-textColor {
+  color: var(--red)
+}
+
+#gray-bar {
+  height: 1px;
+  width: 56%;
+  max-width: 255px;
+
+  margin: 0 auto;
+
+  background-color: var(--gray-700);
+}
+
+#text-response {
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 1em;
+
+  /* fix position */
+}
+
