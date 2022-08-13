@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/title.css">
+    <link href="./styles/style.css" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
     
     <script src="./scripts/index.js"></script>
+    <script src="https://kit.fontawesome.com/85d27b580e.js" crossorigin="anonymous"></script>
     <title>Guess Number</title>
 </head>
 <body>
@@ -18,7 +18,18 @@
     <h1 class="orange-gradient-textColor">qual é o número?</h1>
     <div id="gray-bar"></div>
 
-    
+    <p id="text-response">BLABLA</p>
+    <section id="display-list"></section>
+
+    <button id="btn-new-game">
+        <i class="fa-solid fa-rotate-right"></i>
+        <p>Nova partida</p>
+    </button>
+
+    <form action="#" id="guess-form">
+        <input type="text" name="guess" id="user-guess" placeholder="Digite o palpite">
+        <button type="submit">Enviar</button>
+    </form>
     
 </body>
 </html>

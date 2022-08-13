@@ -64,15 +64,15 @@ h1 {
 }
 
 .orange-textColor {
-  color: var(--orange-900)
+  color: var(--orange-900);
 }
 
 .green-textColor {
-  color: var(--green)
+  color: var(--green);
 }
 
 .red-textColor {
-  color: var(--red)
+  color: var(--red);
 }
 
 #gray-bar {
@@ -90,6 +90,66 @@ h1 {
   font-weight: bold;
   font-size: 1em;
 
+  text-align: center;
   /* fix position */
 }
 
+#btn-new-game {
+  height: 42px;
+  width: 130px;
+
+  font-weight: bold;
+  font-size: 0.75em;
+  font-family: Roboto;
+  color: var(--white);
+  text-transform: uppercase;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  background-image: linear-gradient(var(--gray-900), var(--gray-800));
+
+  margin: 0 auto;
+  border: 0;
+  border-radius: 4px;
+}
+
+#guess-form {
+  height: 42px;
+  width: 298px;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+#guess-form > * {
+  height: 100%;
+
+  font-family: Roboto;
+  font-size: 0.75em;
+
+  border: 0;
+  padding: 0;
+}
+
+#guess-form input {
+  width: 217px;
+}
+
+#guess-form button {
+  width: 70px;
+
+  font-weight: bold;
+  color: var(--white);
+  text-transform: uppercase;
+  background-image: linear-gradient(var(--orange-800), var(--orange-600));
+
+  border-radius: 4px;
+}
+
+.btn-disabled {
+  background-color: var(--gray-600);
+}
