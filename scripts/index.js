@@ -5,6 +5,8 @@ let drawNumber = 0;
 
 let textResponse = document.getElementById("text-response");
 let displayList = document.getElementById("display-list");
+let btnNewGame = document.getElementById("btn-new-game");
+
 let guessForm = document.getElementById("guess-form");
 let guessInput = document.getElementById("guess-input");
 
@@ -39,6 +41,7 @@ const printNumber = (number) => {
   displayList.innerText = number;
 };
 
+// user submit a guess => respond according to game rules
 guessForm.addEventListener("submit", (event) => {
   // prevent page reload
   event.preventDefault();
@@ -64,13 +67,12 @@ guessForm.addEventListener("submit", (event) => {
         textResponse.innerText = "É maior";
       }
 
-      printNumber(userGuess)
-      
+      printNumber(userGuess);
     }
   }
 });
 
-// if user guess is NOT valid, submit button turns gray
+// user guess is NOT valid => submit button turns gray
 guessInput.addEventListener("input", (event) => {
   userGuess = guessInput.value;
 
@@ -79,5 +81,14 @@ guessInput.addEventListener("input", (event) => {
     console.log("turn the enviar button grayyy");
   }
 });
+
+// newGame button was pressed => start a new match
+btnNewGame.addEventListener("mouseup", (event) => {
+
+  // if left mouse button was pressed
+  if (event.button == 0){
+    startGame();
+  }
+})
 
 startGame();
