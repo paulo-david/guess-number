@@ -13,6 +13,8 @@ let guessInput = document.getElementById("guess-input");
 // update page to initial state, before game begins
 const cleanValues = () => {
   textResponse.innerText = "";
+  textResponse.classList.remove("red-textColor");
+  textResponse.classList.remove("green-textColor");
   printNumber(0);
   // make the button of nova partida - desaparecer
   guessInput.value = "";
@@ -31,6 +33,8 @@ const startGame = () => {
       console.log(`drawNumber is ${drawNumber}`);
     })
     .catch((err) => {
+      textResponse.innerText = "ERRO";
+      textResponse.classList.add("red-textColor");
       //   text-response =  "ERRO" fica RED
       //   button nova partida, aparece
       //  button enviar, fica gray
@@ -56,6 +60,7 @@ guessForm.addEventListener("submit", (event) => {
 
       if (userGuess === drawNumber) {
         textResponse.innerText = "Você acertou!!!";
+        textResponse.classList.add("green-textColor");
         // display turn green
         // botton new-game appears
         // guessInput, guessButton turns gray
@@ -80,15 +85,17 @@ guessInput.addEventListener("input", (event) => {
   if (userGuess.length && !Number(userGuess)) {
     console.log("turn the enviar button grayyy");
   }
+  else {
+    console.log("button fica normal")
+  }
 });
 
 // newGame button was pressed => start a new match
 btnNewGame.addEventListener("mouseup", (event) => {
-
   // if left mouse button was pressed
-  if (event.button == 0){
+  if (event.button == 0) {
     startGame();
   }
-})
+});
 
 startGame();

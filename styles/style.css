@@ -49,6 +49,10 @@ h1 {
     margin-top: 44px;
     margin-bottom: 21px;
   }
+
+  #text-response {
+    margin-top: 55px;
+  }
 }
 
 .orange-gradient-textColor {
@@ -84,12 +88,17 @@ h1 {
 }
 
 #text-response {
+  height: 20px;
+
   font-family: Montserrat;
   font-weight: bold;
   font-size: 1em;
 
   text-align: center;
-  /* fix position */
+
+  margin-top: 90px;
+
+  transition: 1s;
 }
 
 #display-list {
