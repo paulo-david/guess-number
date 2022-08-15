@@ -126,6 +126,10 @@ h1 {
   border-radius: 4px;
 }
 
+button.display-vanish {
+  visibility: hidden;
+}
+
 #guess-form {
   height: 42px;
   width: 298px;

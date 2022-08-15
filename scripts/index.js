@@ -16,7 +16,8 @@ const cleanValues = () => {
   textResponse.classList.remove("red-textColor");
   textResponse.classList.remove("green-textColor");
   printNumber(0);
-  // make the button of nova partida - desaparecer
+  
+  btnNewGame.classList.add("display-vanish")
   guessInput.value = "";
 
   // make the button orange
@@ -35,6 +36,8 @@ const startGame = () => {
     .catch((err) => {
       textResponse.innerText = "ERRO";
       textResponse.classList.add("red-textColor");
+
+      btnNewGame.classList.remove("display-vanish");
       //   text-response =  "ERRO" fica RED
       //   button nova partida, aparece
       //  button enviar, fica gray
@@ -61,6 +64,8 @@ guessForm.addEventListener("submit", (event) => {
       if (userGuess === drawNumber) {
         textResponse.innerText = "Você acertou!!!";
         textResponse.classList.add("green-textColor");
+
+        btnNewGame.classList.remove("display-vanish");
         // display turn green
         // botton new-game appears
         // guessInput, guessButton turns gray
