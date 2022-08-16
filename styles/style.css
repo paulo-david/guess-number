@@ -150,8 +150,25 @@ button.display-vanish {
   padding: 0;
 }
 
-#guess-form input {
-  width: 217px;
+#guess-input {
+  height: 40px;
+  width: 207px;
+
+  font-weight: normal;
+  color: var(--gray-800);
+
+  border-radius: 4px;
+  border: 1px solid var(--gray-700);
+
+  padding-left: 8px;
+}
+
+#guess-input:focus {
+  outline-color: var(--orange-900);
+}
+
+.input-background-gray {
+  background-color: var(--gray-700);
 }
 
 #guess-form button {
