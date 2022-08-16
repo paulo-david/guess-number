@@ -15,6 +15,7 @@
   --gray-700: #cfcfcf;
   --gray-600: #dddddd;
   --gray-500: #eeeeee;
+  --gray-400: #f5f5f5;
   --white: #ffffff;
 }
 
@@ -168,7 +169,7 @@ button.display-vanish {
 }
 
 .input-background-gray {
-  background-color: var(--gray-700);
+  background-color: var(--gray-400);
 }
 
 #guess-form button {
@@ -182,6 +183,7 @@ button.display-vanish {
   border-radius: 4px;
 }
 
-.btn-disabled {
+#guess-form .btn-disabled {
+  background-image: var(--gray-600);
   background-color: var(--gray-600);
 }

@@ -9,18 +9,22 @@ let btnNewGame = document.getElementById("btn-new-game");
 
 let guessForm = document.getElementById("guess-form");
 let guessInput = document.getElementById("guess-input");
+let guessButton = document.getElementById("guess-button");
 
 // update page to initial state, before game begins
 const cleanValues = () => {
   textResponse.innerText = "";
   textResponse.classList.remove("red-textColor");
   textResponse.classList.remove("green-textColor");
-  printNumber(0);
-  
-  btnNewGame.classList.add("display-vanish")
-  guessInput.value = "";
 
-  // make the button orange
+  printNumber(0);
+
+  btnNewGame.classList.add("display-vanish");
+
+  guessInput.value = "";
+  guessInput.classList.remove('input-background-gray');
+
+  guessButton.classList.remove('btn-disabled');
 };
 
 const startGame = () => {
@@ -38,9 +42,9 @@ const startGame = () => {
       textResponse.classList.add("red-textColor");
 
       btnNewGame.classList.remove("display-vanish");
-      //   text-response =  "ERRO" fica RED
-      //   button nova partida, aparece
-      //  button enviar, fica gray
+      
+      guessInput.classList.add('input-background-gray');
+      guessButton.classList.add('btn-disabled');
     });
 };
 
@@ -66,9 +70,10 @@ guessForm.addEventListener("submit", (event) => {
         textResponse.classList.add("green-textColor");
 
         btnNewGame.classList.remove("display-vanish");
-        // display turn green
-        // botton new-game appears
-        // guessInput, guessButton turns gray
+        ///////////////// display turn green
+
+        guessInput.classList.add('input-background-gray');
+        guessButton.classList.add('btn-disabled');
 
         drawNumber = 0;
       } else if (userGuess > drawNumber) {
@@ -88,10 +93,11 @@ guessInput.addEventListener("input", (event) => {
 
   // check if guess is NOT valid: guess NOT empty and guess is NOT a number
   if (userGuess.length && !Number(userGuess)) {
-    console.log("turn the enviar button grayyy");
-  }
-  else {
-    console.log("button fica normal")
+    guessInput.classList.add('input-background-gray');
+    guessButton.classList.add('btn-disabled');
+  } else {
+    guessInput.classList.remove('input-background-gray');
+    guessButton.classList.remove('btn-disabled');
   }
 });
 
