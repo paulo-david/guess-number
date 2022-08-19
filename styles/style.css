@@ -37,8 +37,9 @@ h1 {
 
   text-align: center;
 
-  margin-top: 62px;
+  margin: 0;
   margin-bottom: 17px;
+  padding-top: 62px;
 
   transition: 0.3s;
 }
