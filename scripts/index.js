@@ -58,31 +58,34 @@ guessForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // check if the game is still going
-  if (drawNumber) {
-    let userGuess = Number(guessInput.value);
+  if (!drawNumber) { return; }
 
-    // check if user guess is valid
-    if (userGuess) {
-      printDisplay(userGuess);
+  let userGuess = Number(guessInput.value);
 
-      // check if user guessed the correct number
-      if (userGuess === drawNumber) {
-        textResponse.innerText = "Você acertou!!!";
-        textResponse.classList.add("green-textColor");
+  // check if user guess is valid
+  if (!userGuess) { return; }
 
-        btnNewGame.classList.remove("display-vanish");
-        printDisplay(drawNumber, "green");
+  // check if guess is in range
+  if (userGuess < MIN || userGuess > MAX) { return; }
 
-        guessInput.classList.add("input-background-gray");
-        guessButton.classList.add("btn-disabled");
+  printDisplay(userGuess);
 
-        drawNumber = 0;
-      } else if (userGuess > drawNumber) {
-        textResponse.innerText = "É menor";
-      } else {
-        textResponse.innerText = "É maior";
-      }
-    }
+  // check if user guessed the correct number
+  if (userGuess === drawNumber) {
+    textResponse.innerText = "Você acertou!!!";
+    textResponse.classList.add("green-textColor");
+
+    btnNewGame.classList.remove("display-vanish");
+    printDisplay(drawNumber, "green");
+
+    guessInput.classList.add("input-background-gray");
+    guessButton.classList.add("btn-disabled");
+
+    drawNumber = 0;
+  } else if (userGuess > drawNumber) {
+    textResponse.innerText = "É menor";
+  } else {
+    textResponse.innerText = "É maior";
   }
 });
 
