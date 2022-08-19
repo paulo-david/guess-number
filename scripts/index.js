@@ -1,7 +1,9 @@
 import printDisplay from "./display_manipulation.js";
 
-const API_URL =
-  "https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300";
+const MIN = 1
+const MAX = 300
+
+const API_URL = `https://us-central1-ss-devops.cloudfunctions.net/rand?min=${MIN}&max=${MAX}`;
 
 let drawNumber = 0;
 
@@ -88,7 +90,7 @@ guessForm.addEventListener("submit", (event) => {
 guessInput.addEventListener("input", (event) => {
   let userGuess = guessInput.value;
   // check if guess is NOT valid: guess NOT empty and guess is NOT a number
-  if (userGuess.length && !Number(userGuess)) {
+  if ((userGuess.length && !Number(userGuess)) || drawNumber === 0) {
     guessInput.classList.add("input-background-gray");
     guessButton.classList.add("btn-disabled");
   } else {
