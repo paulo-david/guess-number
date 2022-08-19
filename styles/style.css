@@ -110,9 +110,9 @@ h1 {
   height: 42px;
   width: 130px;
 
+  font-family: Roboto;
   font-weight: bold;
   font-size: 0.75em;
-  font-family: Roboto;
   color: var(--white);
   text-transform: uppercase;
 

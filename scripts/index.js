@@ -1,4 +1,4 @@
-import printDisplay from "./display_manipulation.js"
+import printDisplay from "./display_manipulation.js";
 
 const API_URL =
   "https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300";
@@ -23,9 +23,9 @@ const cleanValues = () => {
   btnNewGame.classList.add("display-vanish");
 
   guessInput.value = "";
-  guessInput.classList.remove('input-background-gray');
+  guessInput.classList.remove("input-background-gray");
 
-  guessButton.classList.remove('btn-disabled');
+  guessButton.classList.remove("btn-disabled");
 };
 
 const startGame = () => {
@@ -35,17 +35,21 @@ const startGame = () => {
   fetch(API_URL)
     .then((response) => response.json())
     .then((response) => {
-      drawNumber = response.value;
-      console.log(`drawNumber is ${drawNumber}`);
-    })
-    .catch((err) => {
-      textResponse.innerText = "ERRO";
-      textResponse.classList.add("red-textColor");
+      console.log(response)
 
-      btnNewGame.classList.remove("display-vanish");
-      
-      guessInput.classList.add('input-background-gray');
-      guessButton.classList.add('btn-disabled');
+      if (response.Error) {
+        textResponse.innerText = "ERRO";
+        textResponse.classList.add("red-textColor");
+        
+        printDisplay(response.StatusCode, "red");
+
+        btnNewGame.classList.remove("display-vanish");
+
+        guessInput.classList.add("input-background-gray");
+        guessButton.classList.add("btn-disabled");
+      } else {
+        drawNumber = response.value;
+      }
     });
 };
 
@@ -60,7 +64,6 @@ guessForm.addEventListener("submit", (event) => {
 
     // check if user guess is valid
     if (userGuess) {
-
       if (userGuess === drawNumber) {
         textResponse.innerText = "Você acertou!!!";
         textResponse.classList.add("green-textColor");
@@ -68,8 +71,8 @@ guessForm.addEventListener("submit", (event) => {
         btnNewGame.classList.remove("display-vanish");
         ///////////////// display turn green
 
-        guessInput.classList.add('input-background-gray');
-        guessButton.classList.add('btn-disabled');
+        guessInput.classList.add("input-background-gray");
+        guessButton.classList.add("btn-disabled");
 
         drawNumber = 0;
       } else if (userGuess > drawNumber) {
@@ -88,11 +91,11 @@ guessInput.addEventListener("input", (event) => {
   let userGuess = guessInput.value;
   // check if guess is NOT valid: guess NOT empty and guess is NOT a number
   if (userGuess.length && !Number(userGuess)) {
-    guessInput.classList.add('input-background-gray');
-    guessButton.classList.add('btn-disabled');
+    guessInput.classList.add("input-background-gray");
+    guessButton.classList.add("btn-disabled");
   } else {
-    guessInput.classList.remove('input-background-gray');
-    guessButton.classList.remove('btn-disabled');
+    guessInput.classList.remove("input-background-gray");
+    guessButton.classList.remove("btn-disabled");
   }
 });
 
