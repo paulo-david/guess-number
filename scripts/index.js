@@ -35,12 +35,10 @@ const startGame = () => {
   fetch(API_URL)
     .then((response) => response.json())
     .then((response) => {
-      console.log(response)
-
       if (response.Error) {
         textResponse.innerText = "ERRO";
         textResponse.classList.add("red-textColor");
-        
+
         printDisplay(response.StatusCode, "red");
 
         btnNewGame.classList.remove("display-vanish");
@@ -64,12 +62,14 @@ guessForm.addEventListener("submit", (event) => {
 
     // check if user guess is valid
     if (userGuess) {
+      printDisplay(userGuess);
+
       if (userGuess === drawNumber) {
         textResponse.innerText = "Você acertou!!!";
         textResponse.classList.add("green-textColor");
 
         btnNewGame.classList.remove("display-vanish");
-        ///////////////// display turn green
+        printDisplay(drawNumber, "green");
 
         guessInput.classList.add("input-background-gray");
         guessButton.classList.add("btn-disabled");
@@ -80,8 +80,6 @@ guessForm.addEventListener("submit", (event) => {
       } else {
         textResponse.innerText = "É maior";
       }
-
-      printDisplay(userGuess);
     }
   }
 });
