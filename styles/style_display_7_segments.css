@@ -18,6 +18,22 @@
   left: 3px;
 }
 
+/* .top-led-on{
+    border-top-color: var(--black-800);
+}
+
+.top-led-off{
+    border-top-color: var(--gray-600);
+}
+
+.top-led-SUCESS{
+    border-top-color: var(--green);
+}
+
+.top-led-ERROR{
+    border-top-color: var(--red);
+} */
+
 .bottom {
   width: 28px;
 
@@ -29,6 +45,22 @@
   left: 3px;
 }
 
+/* .bottom-led-on{
+    border-bottom-color: var(--black-800);
+}
+
+.bottom-led-off{
+    border-bottom-color: var(--gray-600);
+}
+
+.bottom-led-SUCESS{
+    border-bottom-color: var(--green);
+}
+
+.bottom-led-ERROR{
+    border-bottom-color: var(--red);
+} */
+
 .right {
   height: 25px;
 
@@ -38,6 +70,22 @@
 
   left: 45px;
 }
+
+/* .right-led-on{
+    border-right-color: var(--black-800);
+}
+
+.right-led-off{
+    border-right-color: var(--gray-600);
+}
+
+.right-led-SUCESS{
+    border-right-color: var(--green);
+}
+
+.right-led-ERROR{
+    border-right-color: var(--red);
+} */
 
 .right_bottom,
 .left_bottom {
@@ -53,6 +101,8 @@
 
   left: 0px;
 }
+
+/* left leds .... */
 
 .middle {
   height: 16px;

@@ -1,10 +1,11 @@
+import printDisplay from "./display_manipulation.js"
+
 const API_URL =
   "https://us-central1-ss-devops.cloudfunctions.net/rand?min=1&max=300";
 
 let drawNumber = 0;
 
 let textResponse = document.getElementById("text-response");
-let displayList = document.getElementById("display-list");
 let btnNewGame = document.getElementById("btn-new-game");
 
 let guessForm = document.getElementById("guess-form");
@@ -49,7 +50,7 @@ const startGame = () => {
 };
 
 const printNumber = (number) => {
-  displayList.innerText = number;
+  printDisplay(number)
 };
 
 // user submit a guess => respond according to game rules
@@ -59,11 +60,10 @@ guessForm.addEventListener("submit", (event) => {
 
   // check if the game is still going
   if (drawNumber) {
-    userGuess = Number(guessInput.value);
+    let userGuess = Number(guessInput.value);
 
     // check if user guess is valid
     if (userGuess) {
-      console.log(`userGuess is ${userGuess}`);
 
       if (userGuess === drawNumber) {
         textResponse.innerText = "Você acertou!!!";
@@ -89,8 +89,7 @@ guessForm.addEventListener("submit", (event) => {
 
 // user guess is NOT valid => submit button turns gray
 guessInput.addEventListener("input", (event) => {
-  userGuess = guessInput.value;
-
+  let userGuess = guessInput.value;
   // check if guess is NOT valid: guess NOT empty and guess is NOT a number
   if (userGuess.length && !Number(userGuess)) {
     guessInput.classList.add('input-background-gray');
