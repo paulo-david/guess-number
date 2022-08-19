@@ -5,44 +5,37 @@
 .middle {
   border-radius: 5px;
   position: absolute;
+
+  transition: 0.5s;
 }
 
 .top {
-  width: 28px;
-
   border-top: 11px solid var(--gray-600);
-  border-right: 11px solid transparent;
-  border-left: 11px solid transparent;
 
   left: 3px;
 }
 
 .bottom {
-  width: 28px;
-
-  border-right: 11px solid transparent;
   border-bottom: 11px solid var(--gray-600);
-  border-left: 11px solid transparent;
 
   top: 84px;
   left: 3px;
 }
 
-.right {
-  height: 25px;
+.top,
+.bottom {
+  width: 28px;
+  border-right: 11px solid transparent;
+  border-left: 11px solid transparent;
+}
 
-  border-top: 11px solid transparent;
+.right {
   border-right: 11px solid var(--gray-600);
-  border-bottom: 11px solid transparent;
 
   left: 45px;
 }
 
 .left {
-  height: 25px;
-
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
   border-left: 11px solid var(--gray-600);
 
   left: 0px;
@@ -50,15 +43,18 @@
 
 .right,
 .left {
+  height: 25px;
+
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+
   top: 1px;
 }
-
 
 .right_bottom,
 .left_bottom {
   top: 47px;
 }
-
 
 .middle {
   height: 18px;
