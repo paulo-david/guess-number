@@ -7,7 +7,6 @@ let drawNumber = 0;
 
 let textResponse = document.getElementById("text-response");
 let btnNewGame = document.getElementById("btn-new-game");
-
 let guessForm = document.getElementById("guess-form");
 let guessInput = document.getElementById("guess-input");
 let guessButton = document.getElementById("guess-button");
@@ -64,6 +63,7 @@ guessForm.addEventListener("submit", (event) => {
     if (userGuess) {
       printDisplay(userGuess);
 
+      // check if user guessed the correct number
       if (userGuess === drawNumber) {
         textResponse.innerText = "Você acertou!!!";
         textResponse.classList.add("green-textColor");
