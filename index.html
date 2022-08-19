@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="./styles/style.css" rel="stylesheet">
-    <link href="./styles/style_display_7_segments.css" rel="stylesheet">
-    <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
-    <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    
-    <script src="https://kit.fontawesome.com/85d27b580e.js" crossorigin="anonymous"></script>
+    <link href="./styles/style.css" rel="stylesheet" />
+    <link href="./styles/style_display_7_segments.css" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet" />
+    <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet" />
+
+    <script
+      src="https://kit.fontawesome.com/85d27b580e.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Guess Number</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <h1 class="orange-gradient-textColor">qual é o número?</h1>
     <div id="gray-bar"></div>
-    
+
     <p id="text-response" class="orange-textColor"></p>
-    <section id="display-list">
-    </section>
-    
+    <section id="display-list"></section>
+
     <button id="btn-new-game" class="display-vanish">
-        <i class="fa-solid fa-rotate-right"></i>
-        <p>Nova partida</p>
+      <i class="fa-solid fa-rotate-right"></i>
+      <p>Nova partida</p>
     </button>
-    
+
     <form action="#" id="guess-form">
-        <input type="text" name="guess" id="guess-input" placeholder="Digite o palpite">
-        <button type="submit" id="guess-button">Enviar</button>
+      <input
+        type="text"
+        name="guess"
+        id="guess-input"
+        placeholder="Digite o palpite"
+      />
+      <button type="submit" id="guess-button">Enviar</button>
     </form>
-    
+
     <script type="module" src="./scripts/index.js"></script>
-</body>
+  </body>
 </html>
