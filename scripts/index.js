@@ -1,7 +1,7 @@
 import printDisplay from "./display_manipulation.js";
 
-const MIN = 1
-const MAX = 300
+const MIN = 1;
+const MAX = 300;
 
 const API_URL = `https://us-central1-ss-devops.cloudfunctions.net/rand?min=${MIN}&max=${MAX}`;
 
@@ -89,11 +89,16 @@ guessForm.addEventListener("submit", (event) => {
 // user guess is NOT valid => submit button turns gray
 guessInput.addEventListener("input", (event) => {
   let userGuess = guessInput.value;
-  // check if guess is NOT valid: guess NOT empty and guess is NOT a number
-  if ((userGuess.length && !Number(userGuess)) || drawNumber === 0) {
+  // check if guess is NOT valid and its range
+  if (
+    (userGuess.length && (!Number(userGuess) || userGuess < MIN)) ||
+    userGuess > MAX
+  ) {
     guessInput.classList.add("input-background-gray");
     guessButton.classList.add("btn-disabled");
-  } else {
+
+    // check if the game is still going
+  } else if (drawNumber) {
     guessInput.classList.remove("input-background-gray");
     guessButton.classList.remove("btn-disabled");
   }
