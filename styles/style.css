@@ -43,19 +43,6 @@ h1 {
   transition: 0.3s;
 }
 
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 2.25em;
-
-    margin-top: 44px;
-    margin-bottom: 21px;
-  }
-
-  #text-response {
-    margin-top: 55px;
-  }
-}
-
 .orange-gradient-textColor {
   background-image: linear-gradient(var(--orange-800), var(--orange-700));
 
@@ -127,6 +114,8 @@ h1 {
   margin-top: 56px;
   border: 0;
   border-radius: 4px;
+
+  transition: 1s;
 }
 
 button.display-vanish {
@@ -136,7 +125,7 @@ button.display-vanish {
 #guess-form {
   height: 42px;
   width: 298px;
-  
+
   display: flex;
   justify-content: space-between;
 
@@ -146,6 +135,8 @@ button.display-vanish {
   left: 0;
 
   margin: 0 auto;
+
+  transition: 1s;
 }
 
 #guess-form > * {
@@ -193,4 +184,25 @@ button.display-vanish {
 #guess-form .btn-disabled {
   background-image: var(--gray-600);
   background-color: var(--gray-600);
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 2.25em;
+
+    margin-top: 44px;
+    margin-bottom: 21px;
+  }
+
+  #text-response {
+    margin-top: 50px;
+  }
+
+  #btn-new-game {
+    margin-top: 31px;
+  }
+
+  #guess-form {
+    bottom: 59px;
+  }
 }
