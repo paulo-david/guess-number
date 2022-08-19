@@ -20,7 +20,6 @@ const cleanValues = () => {
   textResponse.classList.remove("green-textColor");
 
   printDisplay(0);
-
   btnNewGame.classList.add("display-vanish");
 
   guessInput.value = "";

@@ -25,23 +25,31 @@ let numbers = [
   { a: true, b: true, c: true, d: true, e: false, f: true, g: true },
 ];
 
+// "turn on" the leds in display according to digit
 const colorSegments = (digit, segment_list) => {
+  // get an object of which segments are lit
   let is_colored = numbers[digit];
 
   for (const segment in is_colored) {
-    if (is_colored[segment]) {
-      const segmentHTML = segment_list[segment];
-      const segmentClass = segmentHTML.classList[0];
+    // if segment is not colored, go to next iteration of looop
+    if (!is_colored[segment]) {
+      continue;
+    }
 
-      const classCapitalized =
-        segmentClass.charAt(0).toUpperCase() + segmentClass.slice(1);
+    // get the element and its class
+    const segmentHTML = segment_list[segment];
+    const segmentClass = segmentHTML.classList[0];
 
-      segmentHTML.style[`border${classCapitalized}Color`] = colors[color];
+    const classCapitalized =
+      segmentClass.charAt(0).toUpperCase() + segmentClass.slice(1);
 
-      if (segmentClass === "middle") {
-        segmentHTML.style.backgroundColor = colors[color];
-        segmentHTML.classList.add(`middle-${color}`);
-      }
+    // turn the segment/led "on"
+    segmentHTML.style[`border${classCapitalized}Color`] = colors[color];
+
+    // take care of special case in segment of the middle
+    if (segmentClass === "middle") {
+      segmentHTML.style.backgroundColor = colors[color];
+      segmentHTML.classList.add(`middle-${color}`);
     }
   }
 };

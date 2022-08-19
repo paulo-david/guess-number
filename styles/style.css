@@ -115,7 +115,7 @@ h1 {
   border: 0;
   border-radius: 4px;
 
-  transition: 1s;
+  transition: 0.1s;
 }
 
 button.display-vanish {
