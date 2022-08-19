@@ -86,6 +86,8 @@ guessForm.addEventListener("submit", (event) => {
   } else {
     textResponse.innerText = "É maior";
   }
+
+  guessInput.value = ""
 });
 
 // user guess is NOT valid => submit button turns gray
