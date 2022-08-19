@@ -18,7 +18,7 @@ const cleanValues = () => {
   textResponse.classList.remove("red-textColor");
   textResponse.classList.remove("green-textColor");
 
-  printNumber(0);
+  printDisplay(0);
 
   btnNewGame.classList.add("display-vanish");
 
@@ -47,10 +47,6 @@ const startGame = () => {
       guessInput.classList.add('input-background-gray');
       guessButton.classList.add('btn-disabled');
     });
-};
-
-const printNumber = (number) => {
-  printDisplay(number)
 };
 
 // user submit a guess => respond according to game rules
@@ -82,7 +78,7 @@ guessForm.addEventListener("submit", (event) => {
         textResponse.innerText = "É maior";
       }
 
-      printNumber(userGuess);
+      printDisplay(userGuess);
     }
   }
 });
